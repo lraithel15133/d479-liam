@@ -1,0 +1,355 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Calibri, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+/* Header and Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #005f5f;
+    color: white;
+    padding: 0 30px;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    height: 100%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+nav a.active {
+    background-color: #007f7f;
+}
+
+nav a.active::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: #007f7f;
+    z-index: -1;
+    transition: height 0.3s;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.menu-toggle.open + nav ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: #005f5f;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+/* Page Header */
+.page-header {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    margin-top: 80px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #007f7f;
+    z-index: 999;
+    position: relative;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #007f7f;
+    z-index: -1;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://img.freepik.com/free-photo/beautiful-tropical-beach-sea_74190-6613.jpg?t=st=1722705869~exp=1722709469~hmac=138e9548b4e86eb8e062ea8b0b9ce036bdf93478e793da3dffd0a8f0085143dd&w=996') center/cover no-repeat;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+/* Content Section */
+.content {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.content h2 {
+    font-size: 36px;
+    color: #007f7f;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.category {
+    border: 1px solid #007f7f;
+    border-radius: 8px;
+    padding: 20px;
+    width: 220px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.category:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category h3 {
+    color: #007f7f;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #007f7f;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005f5f;
+}
+
+/* Map Section */
+.map {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.map iframe {
+    width: 450px;
+    height: 300px;
+    border: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-details {
+    text-align: left;
+    max-width: 300px;
+}
+
+.map-details span {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.map-details a {
+    color: #007f7f;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.map-details a:hover {
+    color: #005f5f;
+}
+
+/* Footer */
+footer {
+    background-color: #004f4f;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.social-media {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-media a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #cce7e8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #005f5f;
+        width: 100%;
+        padding: 10px 20px;
+        z-index: 999;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 15px 20px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 769px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .content h2 {
+        font-size: 28px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 20px 0;
+    }
+
+    nav a.active::before {
+        height: 150px;
+    }
+}
